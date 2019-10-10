@@ -1,0 +1,28 @@
+
+
+{%extends 'base.html' %}
+
+{% block body %}
+
+<form  method="post">
+  <h2>This is my calculator</h2>
+  <img src="{{ url_for('static', filename='images/calculator1.jpg') }}" />
+  <table>
+    <tr>
+      <td> First Number: </td> <td> <input type="text" name="numOne" /> </td>
+    </tr>
+    <tr>
+      <td> Second Number: </td> <td> <input type="text" name="numTwo" /> </td>
+    </tr>
+  </table>
+    <br>
+  <input class="button" type="submit" formaction="/add" value="Add" />
+  <input class="button" type="submit" formaction="/subtract" value="Subtract!" />
+  <input class="button" type="submit" formaction="/multiply" value="Multiply" />
+  <input class="button" type="submit" formaction="/divide" value="Divide" />
+</form>
+
+<p> {{ display }} </p>
+<div style="clear:both;"></div>
+
+{% endblock %}
