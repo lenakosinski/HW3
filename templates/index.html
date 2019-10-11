@@ -1,28 +1,32 @@
+  {% extends 'base.html' %}
+
+  {% block body %}
 
 
-{%extends 'base.html' %}
+  <form method="post">
+        <head>
+                <meta charset="utf-8">
+                <title>{{ pageTitle }}</title>
+                <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/stylesheet.css') }}"/>
+            </head>
+    <h2>This is my calculator</h2>
+    <img src="{{ url_for('static', filename='images/calculator1.jpg') }}" />
+    <table>
+      <tr>
+        <td> Loan amount: </td> <td> <input type = "text" name="loan_amount" /> </td>
+      </tr>
+      <tr>
+        <td> Number of periodic payments: </td> <td> <input type = "text" name="number_payments" /> </td>
+      </tr>
+      <tr>
+        <td> Periodic interest rate: </td> <td> <input type = "text" name="interest_rate"/> </td>
+      </tr>
+    </table>
+      <br>
+    <input class="button" type="submit" formaction="/calculate" value="Calculate Loan Payment" />
+  </form>
 
-{% block body %}
+  <p> {{display}} </p>
+  <div style="clear:both;"></div>
 
-<form  method="post">
-  <h2>This is my calculator</h2>
-  <img src="{{ url_for('static', filename='images/calculator1.jpg') }}" />
-  <table>
-    <tr>
-      <td> First Number: </td> <td> <input type="text" name="numOne" /> </td>
-    </tr>
-    <tr>
-      <td> Second Number: </td> <td> <input type="text" name="numTwo" /> </td>
-    </tr>
-  </table>
-    <br>
-  <input class="button" type="submit" formaction="/add" value="Add" />
-  <input class="button" type="submit" formaction="/subtract" value="Subtract!" />
-  <input class="button" type="submit" formaction="/multiply" value="Multiply" />
-  <input class="button" type="submit" formaction="/divide" value="Divide" />
-</form>
-
-<p> {{ display }} </p>
-<div style="clear:both;"></div>
-
-{% endblock %}
+  {% endblock %}

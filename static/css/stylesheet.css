@@ -1,0 +1,15 @@
+body {
+    background-color: azure;
+    color: black;
+    font-size: 1.1em;
+}
+h1 {
+    color: fuchsia;
+}
+h2 {
+    color: coral;
+}
+img {
+    height:15%;
+    width: auto;
+}
